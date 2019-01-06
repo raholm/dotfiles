@@ -1,0 +1,14 @@
+[alias]
+br = branch
+brd = branch -d
+co = checkout
+cob = checkout -b
+st = status
+cp = cherry-pick
+aa = add -A .
+au = add -u
+c = commit
+cm = commit -m
+ca = commit --amend
+cam = commit --amend -m
+can = commit --amend --no-edit
