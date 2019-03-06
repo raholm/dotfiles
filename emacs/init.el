@@ -107,13 +107,15 @@
 ;;                               "\\.m$"))
 
 ;; Magit
-(global-set-key (kbd "C-c g s") 'magit-status)
-(global-set-key (kbd "C-c g p") 'magit-push)
-(global-set-key (kbd "C-c g l") 'magit-pull)
-(global-set-key (kbd "C-c g c") 'magit-commit)
-(global-set-key (kbd "C-c g b") 'magit-branch)
-(global-set-key (kbd "C-c g a") 'magit-commit-amend)
-(global-set-key (kbd "C-c g h") 'magit-stash)
+(require magit
+  :config
+  (global-set-key (kbd "C-c g s") 'magit-status)
+  (global-set-key (kbd "C-c g p") 'magit-push)
+  (global-set-key (kbd "C-c g l") 'magit-pull)
+  (global-set-key (kbd "C-c g c") 'magit-commit)
+  (global-set-key (kbd "C-c g b") 'magit-branch)
+  (global-set-key (kbd "C-c g a") 'magit-commit-amend)
+  (global-set-key (kbd "C-c g h") 'magit-stash))
 
 ;; SmartParens
 (use-package smartparens
@@ -125,6 +127,7 @@
   :config
   (global-set-key (kbd "C-c C-i") 'yas-insert-snippet)
   (yas-global-mode t))
+(use-package yasnippet-snippets)
 
 ;; Grep
 (defun rh/grep-hooks ()
@@ -180,6 +183,11 @@
   (local-set-key (kbd "C-p") 'next-line))
 
 (add-hook 'buffer-menu-mode-hook 'rh/buffer-menu-hooks)
+
+;; OpenCL
+(require opencl-mode)
+(rh/add-to-mode 'opencl-mode (list
+			      "\\.cl$"))
 
 ;; Projectile
 (use-package projectile
