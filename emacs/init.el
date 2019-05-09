@@ -48,7 +48,7 @@
 
 (global-set-key (kbd "M-r") 'replace-string)
 
-;; Mod
+;; Mode
 (defun rh/add-to-mode (mode lst)
   (dolist (file lst)
     (add-to-list 'auto-mode-alist
@@ -59,6 +59,14 @@
                            "\\.hpp$"
                            "\\.cpp$"
                            "\\.c$"))
+
+(use-package opencl-mode
+  :init
+  (rh/add-to-mode 'opencl-mode (list "\\.cl$")))
+
+(use-package cuda-mode
+  :init
+  (rh/add-to-mode 'cuda-mode (list "\\.cu$")))
 
 ;; Global Hooks
 ;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
