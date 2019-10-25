@@ -1,6 +1,8 @@
 [alias]
 br = branch
 brd = branch -d
+brD = branch -D
+brm = branch -m
 co = checkout
 cob = checkout -b
 st = status
@@ -12,3 +14,17 @@ cm = commit -m
 ca = commit --amend
 cam = commit --amend -m
 can = commit --amend --no-edit
+sh = stash
+shl = stash list
+shp = stash pop
+shs = stash save
+rb = rebase
+fp = fetch --prune
+fpr = !"git fp && git rb"
+l = log
+lo = log --oneline
+lon = log --oneline -n
+lg = log --graph --abbrev-commit --decorate
+d = diff
+dh = diff HEAD~1 HEAD
+dc = diff --cached
