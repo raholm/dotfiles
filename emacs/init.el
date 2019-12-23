@@ -68,6 +68,12 @@
   :init
   (rh/add-to-mode 'cuda-mode (list "\\.cu$")))
 
+(use-package glsl-mode
+  :init
+  (rh/add-to-mode 'glsl-mode (list
+			      "\\.vert$"
+			      "\\.frag$")))
+
 ;; Global Hooks
 ;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
@@ -80,6 +86,8 @@
     (if (> space-count tab-count) (setq indent-tabs-mode nil))
     (if (> tab-count space-count) (setq indent-tabs-mode t))))
 
+(setq c-default-style "linux"
+      c-basic-offset 4)
 (setq indent-tabs-mode nil)
 (infer-indentation-style)
 
