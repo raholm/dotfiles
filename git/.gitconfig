@@ -33,7 +33,8 @@
 	cp = cherry-pick
 	####
 	l = log --oneline
-	lg = log --online --graph --decorate
+	lg = log --online --graph --abbrev-commit --decorate
+	lon = log --oneline -n
 	####
 	ls = ls-files
 	lsf = !git ls-files | grep -i
@@ -46,3 +47,8 @@
 	f = fetch
 	fp = fetch --prune
 	fpr = !git fetch --rpune && git rebase
+	####
+	sh = stash
+	shl = stash list
+	shp = stash pop
+	shs = stash save

@@ -68,6 +68,12 @@
   :init
   (rh/add-to-mode 'cuda-mode (list "\\.cu$")))
 
+(use-package glsl-mode
+  :init
+  (rh/add-to-mode 'glsl-mode (list
+			      "\\.vert$"
+			      "\\.frag$")))
+
 ;; Global Hooks
 ;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
@@ -80,6 +86,8 @@
     (if (> space-count tab-count) (setq indent-tabs-mode nil))
     (if (> tab-count space-count) (setq indent-tabs-mode t))))
 
+(setq c-default-style "linux"
+      c-basic-offset 4)
 (setq indent-tabs-mode nil)
 (infer-indentation-style)
 
@@ -115,7 +123,7 @@
 ;;                               "\\.m$"))
 
 ;; Magit
-(require magit
+(use-package magit
   :config
   (global-set-key (kbd "C-c g s") 'magit-status)
   (global-set-key (kbd "C-c g p") 'magit-push)
@@ -193,9 +201,10 @@
 (add-hook 'buffer-menu-mode-hook 'rh/buffer-menu-hooks)
 
 ;; OpenCL
-(require opencl-mode)
-(rh/add-to-mode 'opencl-mode (list
-			      "\\.cl$"))
+(use-package opencl-mode
+  :config
+  (rh/add-to-mode 'opencl-mode (list
+                                "\\.cl$")))
 
 ;; Projectile
 (use-package projectile
