@@ -33,7 +33,7 @@
 	cp = cherry-pick
 	####
 	l = log --oneline
-	lg = log --online --graph --abbrev-commit --decorate
+	lg = log --oneline --graph --abbrev-commit --decorate
 	lon = log --oneline -n
 	####
 	ls = ls-files
