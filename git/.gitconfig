@@ -1,14 +1,48 @@
 [alias]
-br = branch
-brd = branch -d
-co = checkout
-cob = checkout -b
-st = status
-cp = cherry-pick
-aa = add -A .
-au = add -u
-c = commit
-cm = commit -m
-ca = commit --amend
-cam = commit --amend -m
-can = commit --amend --no-edit
+	####
+	aa = add -A .
+	au = add -u
+	ai = add -i
+	####
+	br = branch
+	bra = branch -a
+	brd = branch -d
+	####
+	c = commit
+	ca = commit --amend
+	cm = commit -m
+	cam = commit --amend -m
+	can = commit --amend --no-edit
+	####
+	co = checkout
+	cob = checkout -b
+	####
+	d = diff
+	dc = diff --cached
+	dh = diff HEAD~1 HEAD
+	dp = diff --patience
+	dk = diff --check
+	####
+	st = status
+	####
+	rb = rebase
+	rbi = rebase -i
+	rbc = rebase --continue
+	rba = rebase --abort
+	####
+	cp = cherry-pick
+	####
+	l = log --oneline
+	lg = log --online --graph --decorate
+	####
+	ls = ls-files
+	lsf = !git ls-files | grep -i
+	####
+	m = merge
+	ma = merge --abort
+	mc = merge --continue
+	ms = merge --skip
+	####
+	f = fetch
+	fp = fetch --prune
+	fpr = !git fetch --rpune && git rebase
