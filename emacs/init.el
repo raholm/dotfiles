@@ -40,10 +40,13 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm-gtags gtags company-c-headers volatile-highlights clean-aindent-mode dtrt-indent zenburn-theme yasnippet ws-butler use-package smartparens org-bullets org-beautify-theme opencl-mode multiple-cursors magit irony-eldoc highlight-symbol helm-swoop helm-projectile helm-org-rifle flycheck-irony drag-stuff dimmer cuda-mode company-irony)))
+    (rtags-xref cmake-ide helm-gtags gtags company-c-headers volatile-highlights clean-aindent-mode dtrt-indent zenburn-theme yasnippet ws-butler use-package smartparens org-bullets org-beautify-theme opencl-mode multiple-cursors magit irony-eldoc highlight-symbol helm-swoop helm-projectile helm-org-rifle flycheck-irony drag-stuff dimmer cuda-mode company-irony)))
  '(safe-local-variable-values
    (quote
-    ((eval setq flycheck-clang-include-path
+    ((company-c-headers-path-user "/home/rasmus/git/tella/tella/include/")
+     (company-clang-arguments "-I/home/rasmus/git/tella/tella/include" "-I/home/rasmus/git/tella/apps/maze/include")
+     (company-clang-arguments "-I/home/rasmus/git/trixie/include/")
+     (eval setq flycheck-clang-include-path
 	   (list
 	    (expand-file-name "~/git/trixie/include/")))
      (company-clang--arguments "-I/home/rasmus/git/trixie/include")

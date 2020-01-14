@@ -51,7 +51,9 @@
 (use-package company
   :init
   (global-company-mode 1)
-  (delete 'company-semantic company-backends))
+  (delete 'company-semantic company-backends)
+  (define-key company-mode-map (kbd "C-M-k") 'company-select-previous)
+  (define-key company-mode-map (kbd "C-M-j") 'company-select-next))
 
 ;; Projectile
 (use-package projectile
@@ -84,6 +86,12 @@
   (global-set-key (kbd "C-c g b") 'magit-branch)
   (global-set-key (kbd "C-c g a") 'magit-commit-amend)
   (global-set-key (kbd "C-c g h") 'magit-stash))
+
+;; rtags
+(use-package rtags)
+  ;; :config
+  ;; (define-key rtags-mode-map (kbd "C-o") 'rtags-previous-match)
+  ;; (define-key rtags-mode-map (kbd "C-p") 'rtags-next-match))
 
 ;; ggtags
 ;; (use-package ggtags

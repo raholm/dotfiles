@@ -26,6 +26,10 @@
 ;; CMake
 (use-package cmake-mode)
 
+(use-package cmake-ide
+  :init
+  (cmake-ide-setup))
+
 ;; Shaders
 (use-package glsl-mode
   :init
