@@ -27,6 +27,7 @@
 	####
 	rb = rebase
 	rbi = rebase -i
+	rbh = "!sh -c \"git rebase -i HEAD~$1\" -"
 	rbc = rebase --continue
 	rba = rebase --abort
 	####
