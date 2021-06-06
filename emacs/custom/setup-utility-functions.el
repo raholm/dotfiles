@@ -12,4 +12,12 @@
     (save-buffer)
     (kill-buffer nil)))
 
+(defun rh/toggle-maximize-buffer ()
+  (interactive)
+  (if (= 1 (length (window-list)))
+      (jump-to-register '_)
+    (progn
+      (window-configuration-to-register '_)
+      (delete-other-windows))))
+
 (provide 'setup-utility-functions)

@@ -35,6 +35,8 @@
 
 (global-set-key (kbd "M-r") 'replace-string)
 
+(global-set-key (kbd "C-c z") 'rh/toggle-maximize-buffer)
+
 ;; Grep
 (defun rh/grep-hooks ()
   (local-set-key (kbd "C-o") 'previous-line)
