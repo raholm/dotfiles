@@ -23,6 +23,7 @@
 (require 'setup-utility-functions)
 (require 'setup-general)
 (require 'setup-c++-mode)
+(require 'setup-rust-mode)
 (require 'setup-org-mode)
 (require 'setup-key-bindings)
 
